@@ -1,5 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import Home from './views/Home.vue'
+import Cursos from './views/Cursos.vue'
+import descr from './views/CursoDescricao'
+import Aulinhas from './views/CursoAulas'
 // import Home from './views/Home.vue'
 // import Cursos from './views/Cursos.vue'
 // import Curso from './views/Curso.vue'
@@ -12,6 +16,19 @@ Vue.use (Router);
 export default new Router({
     mode:"history",
     routes:[
+        {
+            path: "/", component: Home
+        },
+        {
+            path: "/cursos/:dinamic", component: Cursos
+        },
+        {
+            path: "/descricao", component: descr
+        },
+        {
+            path: '/aulinhas', component: Aulinhas
+        }
+
         // {
         //     path: "/", component: Home
         // },

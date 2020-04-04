@@ -1,8 +1,16 @@
 <template>
   <div id="app">
     <h1>teste</h1>
-  <p>{{acao}}</p>
-    
+  <!-- <p>{{acao}}</p> -->
+
+  <router-link to="/">Home</router-link>
+  <router-link to="/cursos/ContraPonto">CounterPoint</router-link>
+  <router-link to="/cursos/Harmonia">Harmonia</router-link>
+  <router-link to="/cursos/Canto">Canto</router-link>
+  <router-link to="/descricao">Descrição</router-link>
+  <router-link to="aulinhas">Aulitas</router-link>
+
+    <router-view></router-view>
    
   </div>
 
@@ -45,6 +53,9 @@ methods: {
 
 
 <style>
+a + a{
+  padding:10px;
+}
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   color:#234;
@@ -59,9 +70,6 @@ methods: {
 a{
  text-decoration: none;
 
-}
-a + a{
-  padding:10px;
 }
 .router-link-exact-active{
   color:red;
