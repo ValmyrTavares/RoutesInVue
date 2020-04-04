@@ -23,9 +23,14 @@ export default new Router({
             path: "/cursos/", component: Cursos
         },
         {
-            path: "/cursos/:dinamic",
+            path: "/:dinamic",
              component: Cursos,
-             props:true
+             props:true,
+             children:[
+                {
+                    path: 'aulinhas', component: Aulinhas
+                }
+             ]
         },
         {
             path: "/descricao", component: descr

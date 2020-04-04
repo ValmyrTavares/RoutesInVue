@@ -8,6 +8,8 @@
          <router-link to="/cursos/ContraPonto">CounterPoint</router-link>
          <router-link to="/cursos/Harmonia">Harmonia</router-link>
           <router-link to="/cursos/Canto">Canto</router-link>
+         
+           <router-view></router-view>
 
         <h1>Cursos {{dinamic}}</h1>
         <p>Somos a segunda opção do link</p>
