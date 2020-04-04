@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>teste</h1>
-  <p>{{vitrine}}</p>
+  <p>{{acao}}</p>
     
    
   </div>
@@ -9,31 +9,33 @@
 </template>
 
 <script>
-import axios from 'axios'
+
 
 export default {
   name: 'App',
-  components: {
-     },data(){
+ data(){
     return{
-        vitrine:null
+        acao:null
     }
 },
-methods:{
-  puxarFetch(){
-    axios.get("http://www.mocky.io/v2/5e88746e310000a8923f495a")
-    .then(r => {
-      this.vitrine = r.data
-      console.log(r.data)
-    })
+methods: {
+    puxarAcao() {
+      // this.loading = true;
+      this.acao = null;
+      fetch(`http://www.mocky.io/v2/5e88746e310000a8923f495a`)
+        .then(r => r.json())
+        .then(r => {
+          this.acao = r;
+          // this.loading = false;
+        });
+    }
   },
-  created(){
-    this.puxarFetch();
-    console.log(this.vitrine)
-  }
+  created() {
+    this.puxarAcao();
+  },
 
 }
-}
+
 </script>
    
      
