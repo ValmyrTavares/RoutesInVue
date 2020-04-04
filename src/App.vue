@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>teste</h1>
-    <!-- <p>{{acao}}</p> -->
+    <p>{{acao}}</p>
 
     <router-link to="/">Home</router-link>
     <router-link to="/descricao">Descrição</router-link>
@@ -20,18 +20,20 @@ export default {
       acao: null,
     };
   },
-  methods: {
-    async puxarAcao() {
-      // this.loading = true;
-      const result = await fetch(
-        `http://www.mocky.io/v2/5e88746e310000a8923f495a`
-      );
-      this.acao = await result.json();
-    },
-  },
-  created() {
-    this.puxarAcao();
-  },
+  // methods: { 
+    
+  //   async puxarAcao() {
+      
+  //     // this.loading = true;
+  //     const result = await fetch(
+  //        `http://www.mocky.io/v2/5e88746e310000a8923f495a`
+  //     );
+  //     this.acao = await result.json();
+  //   },
+  // },
+  // created() {
+  //   this.puxarAcao();
+  // },
 };
 </script>
 

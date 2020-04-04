@@ -7,6 +7,8 @@
       <li>Aula2</li>
       <li>Aula3</li>
     </ul>
+     <router-link to="/aulinhas/cursos">Aulinhas</router-link>
+    <router-view></router-view>
   </div>
 </template>
 

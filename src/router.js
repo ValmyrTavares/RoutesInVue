@@ -2,8 +2,9 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue'
 import Cursos from './views/Cursos.vue'
-import descr from './views/CursoDescricao'
-import Aulinhas from './views/CursoAulas'
+import descr from './views/CursoDescricao.vue'
+import Aulinhas from './views/CursoAulas.vue'
+import curinga from './views/Curinga.vue'
 // import Home from './views/Home.vue'
 // import Cursos from './views/Cursos.vue'
 // import Curso from './views/Curso.vue'
@@ -20,24 +21,46 @@ export default new Router({
             path: "/", component: Home
         },
         {
-            path: "/cursos/", component: Cursos
-        },
-        {
-            path: "/:dinamic",
+            path: "/cursos",
              component: Cursos,
              props:true,
              children:[
                 {
-                    path: 'aulinhas', component: Aulinhas
+                    path: ":dinamic",
+                     component: Cursos,
+                    
+                   
                 }
+               
+             ]
+        },
+       
+        {
+            path: "/descricao",
+             component: descr,
+            
+             children:[
+                 {
+                     path: "/descricao/curinga",
+                     component:curinga
+                 },
+                 {
+                    path:"/descricao/aulinhas",
+                     component: Aulinhas
+                }
+                 
              ]
         },
         {
-            path: "/descricao", component: descr
-        },
-        {
-            path: '/aulinhas', component: Aulinhas
-        }
+            path: '/aulinhas',
+             component: Aulinhas,
+             children:[
+                 {
+                    path: "/aulinhas/cursos",
+                    component: Cursos,
+                 }
+             ]
+        } 
 
         // {
         //     path: "/", component: Home
