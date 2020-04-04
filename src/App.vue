@@ -1,28 +1,67 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <p>{{vitrine}}</p>
+    
+   
   </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+     },data(){
+    return{
+        vitrine:null
+    }
+},
+methods:{
+  puxarFetch(){
+    fetch("http://www.mocky.io/v2/5e88746e310000a8923f495a")
+    .then(r => r.json())
+    .then(r => {
+      this.vitrine = r
+      console.log(this.vitrine)
+    })
+  },
+  created(){
+    this.puxarFetch();
+    console.log(this.vitrine)
   }
+
+}
 }
 </script>
+   
+     
+       
+       
+
+
 
 <style>
-#app {
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color:#234;
+  border:4px solid;
+  margin:20px;
+  padding: 20px;
 }
+ nav{
+   padding: 20px 0;
+ } 
+
+a{
+ text-decoration: none;
+
+}
+a + a{
+  padding:10px;
+}
+.router-link-exact-active{
+  color:red;
+  font-size:22px
+}  */
 </style>
