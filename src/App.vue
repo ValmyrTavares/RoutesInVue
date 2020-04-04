@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>teste</h1>
   <p>{{vitrine}}</p>
     
    
@@ -8,6 +9,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 
 export default {
   name: 'App',
@@ -19,11 +21,10 @@ export default {
 },
 methods:{
   puxarFetch(){
-    fetch("http://www.mocky.io/v2/5e88746e310000a8923f495a")
-    .then(r => r.json())
+    axios.get("http://www.mocky.io/v2/5e88746e310000a8923f495a")
     .then(r => {
-      this.vitrine = r
-      console.log(this.vitrine)
+      this.vitrine = r.data
+      console.log(r.data)
     })
   },
   created(){
