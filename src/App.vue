@@ -4,11 +4,10 @@
   <!-- <p>{{acao}}</p> -->
 
   <router-link to="/">Home</router-link>
-  <router-link to="/cursos/ContraPonto">CounterPoint</router-link>
-  <router-link to="/cursos/Harmonia">Harmonia</router-link>
-  <router-link to="/cursos/Canto">Canto</router-link>
   <router-link to="/descricao">Descrição</router-link>
-  <router-link to="aulinhas">Aulitas</router-link>
+  <router-link to="/aulinhas">Aulitas</router-link>
+  <router-link to="/cursos">Cursos</router-link>
+ 
 
     <router-view></router-view>
    

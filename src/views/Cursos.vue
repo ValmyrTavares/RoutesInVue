@@ -5,27 +5,35 @@
         <router-link to="/cursos/javascript">javascript</router-link>
         <router-link to="/cursos/CSS">CSS</router-link>
         <router-view></router-view> -->
+         <router-link to="/cursos/ContraPonto">CounterPoint</router-link>
+         <router-link to="/cursos/Harmonia">Harmonia</router-link>
+          <router-link to="/cursos/Canto">Canto</router-link>
 
-        <h1>Cursos {{lele}}</h1>
+        <h1>Cursos {{dinamic}}</h1>
         <p>Somos a segunda opção do link</p>
   </div>
 </template>
 
 <script>
 export default {
-    props:["curso"],
+    props:["dinamic"],
 
     
+    // computed:{
+    //   opcaoCursos(){
+    //     return this.$route.params.dinamic
+    //   }
+    //  },
+
     created(){
         console.log("Esse componente foi criado")
     },
-    computed:{
-      lele(){
-        return this.$route.params.dinamic
-      }
-    },
-    beforeRouteUpdate(to,from, next){
-    next(); 
+     
+    
+    beforeRouteUpdate(to,from,next){
+      console.log("Esse fetch foi feito")
+      next();
+    
     
     }
 

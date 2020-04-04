@@ -20,7 +20,12 @@ export default new Router({
             path: "/", component: Home
         },
         {
-            path: "/cursos/:dinamic", component: Cursos
+            path: "/cursos/", component: Cursos
+        },
+        {
+            path: "/cursos/:dinamic",
+             component: Cursos,
+             props:true
         },
         {
             path: "/descricao", component: descr
