@@ -1,59 +1,43 @@
 <template>
   <div id="app">
     <h1>teste</h1>
-  <!-- <p>{{acao}}</p> -->
+    <!-- <p>{{acao}}</p> -->
 
-  <router-link to="/">Home</router-link>
-  <router-link to="/descricao">Descrição</router-link>
-  <router-link to="/aulinhas">Aulitas</router-link>
-  <router-link to="/cursos">Cursos</router-link>
- 
+    <router-link to="/">Home</router-link>
+    <router-link to="/descricao">Descrição</router-link>
+    <router-link to="/aulinhas">Aulitas</router-link>
+    <router-link to="/cursos">Cursos</router-link>
 
     <router-view></router-view>
-   
   </div>
-
 </template>
 
 <script>
-
-
 export default {
-  name: 'App',
- data(){
-    return{
-        acao:null
-    }
-},
-methods: {
-    puxarAcao() {
+  name: "App",
+  data() {
+    return {
+      acao: null,
+    };
+  },
+  methods: {
+    async puxarAcao() {
       // this.loading = true;
-      this.acao = null;
-      fetch(`http://www.mocky.io/v2/5e88746e310000a8923f495a`)
-        .then(r => r.json())
-        .then(r => {
-          this.acao = r;
-          // this.loading = false;
-        });
-    }
+      const result = await fetch(
+        `http://www.mocky.io/v2/5e88746e310000a8923f495a`
+      );
+      this.acao = await result.json();
+    },
   },
   created() {
     this.puxarAcao();
   },
-
-}
-
+};
 </script>
-   
-     
-       
-       
-
-
 
 <style>
-a + a{
-  padding:10px;
+a + a {
+  padding: 10px;
 }
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
