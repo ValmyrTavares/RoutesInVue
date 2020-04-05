@@ -2,7 +2,7 @@
   <div id="app">
    
    <TheHeader/>
-   <router-view></router-view>
+   <router-view class="container"></router-view>
    
     
 
@@ -29,18 +29,30 @@ export default {
         font-family:"Avenir", Arial, Helvetica, sans-serif;
         color:#234;
     }
-    ul{
-        list-style: none;
-        padding: 0px;
-        margin:0px;
-    }
-    a{
-        font-weight:bold;
-        text-decoration: none;
-        color:#234;
-    }
-     a.router-link-active{
-    color:#4b8;
+  ul{
+      list-style: none;
+      padding: 0px;
+      margin:0px;
+  }
+  a{
+      font-weight:bold;
+      text-decoration: none;
+      color:#234;
+  }
+    a.router-link-active{
+  color:#4b8;
+  }
+  .container{
+    max-width:800px;
+    margin:0 auto;
+    padding: 20px;
+  }
+  .v-enter{
+    opacity: 0;
+    transform: translate3d(-20px,0,0)
+  }
+  .v-enter-active{
+    transition:all .5s
   }
 
 </style>
