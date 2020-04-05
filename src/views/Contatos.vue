@@ -1,10 +1,12 @@
 <template>
-  <h1>Cursos</h1>
+<div>
+    <h1>Contatos</h1>
+</div>
+  
 </template>
 
 <script>
 export default {
-    name:"Cursos"
 
 }
 </script>
