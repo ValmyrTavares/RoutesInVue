@@ -1,12 +1,28 @@
 <template>
 <div>
-    <h1>Contatos</h1>
+   
      <div v-if="loading">
         <pageLoading/>
     </div>
     <transition>
     <div v-if="api">
-        <p>{{api}}</p>
+        <h1>{{api.titulo}}</h1>
+         <p>{{api.descricao}}</p>
+        <ul>
+            <li>
+                <b>Email</b>
+                {{api.contato.email}}
+            </li>
+              <li>
+                <b>Telefone</b>
+                {{api.contato.telefone}}
+            </li>
+              <li>
+                <b>Endereço</b>
+                {{api.contato.endereco}}
+            </li>
+        </ul>
+       
     </div>
     </transition>
 </div>
